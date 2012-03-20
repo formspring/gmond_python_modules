@@ -1,0 +1,134 @@
+modules {
+  module {
+    name     = "__HOSTNAME__"
+    language = "python"
+
+    param host {
+      value = "__HOSTNAME__"
+    }
+    param port {
+      value = 11211
+    }
+    param type {
+      value = "memcached"
+    }
+
+    param refresh_rate {
+      value = 15
+    }
+
+    param metrix_prefix {
+      value = "__HOSTNAME__"
+    }
+    param spoof_host {
+      value = "__IPADDRESS__:__HOSTNAME__"
+    }
+  }
+}
+
+collection_group {
+  collect_every  = 20
+  time_threshold = 90
+
+  metric {
+    name  = "__HOSTNAME___curr_items"
+    title = "Current number of items"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cmd_get"
+    title = "Retrieval reqs"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cmd_set"
+    title = "Storage reqs"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cmd_get_rate"
+    title = "Flush reqs"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cmd_set_rate"
+    title = "Bytes read"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___bytes_read"
+    title = "Bytes written"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___bytes_written"
+    title = "Current size"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___bytes"
+    title = "Max size"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___limit_maxbytes"
+    title = "Connections"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___curr_connections"
+    title = "Evictions"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___evictions"
+    title = "Get hits"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___get_hits"
+    title = "Get misses"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___get_misses"
+    title = "Delete hits"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___get_hits_rate"
+    title = "Delete misses"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___get_misses_rate"
+    title = "Increment hits"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___incr_misses"
+    title = "Increment misses"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___decr_hits"
+    title = "Decrement hits"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___decr_misses"
+    title = "Decrement misses"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cas_hits"
+    title = "Check and set hits"
+    value_threshold = 0
+  }
+  metric {
+    name  = "__HOSTNAME___cas_misses"
+    title = "Check and set misses"
+    value_threshold = 0
+  }
+
+}
